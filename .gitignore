@@ -1,8 +1,8 @@
 # IDE
 .idea/
 
-# PyCharm generated sample script
-main.py
+# PyCharm generated sample script (root only)
+/main.py
 
 # Python
 __pycache__/
