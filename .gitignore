@@ -1,0 +1,11 @@
+# IDE
+.idea/
+
+# PyCharm generated sample script
+main.py
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
