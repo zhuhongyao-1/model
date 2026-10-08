@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="startGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50"/>
+      <stop offset="100%" style="stop-color:#45a049"/>
+    </linearGradient>
+    <linearGradient id="outputGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3"/>
+      <stop offset="100%" style="stop-color:#1976D2"/>
+    </linearGradient>
+    <linearGradient id="qaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9800"/>
+      <stop offset="100%" style="stop-color:#F57C00"/>
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9C27B0"/>
+      <stop offset="100%" style="stop-color:#7B1FA2"/>
+    </linearGradient>
+    <linearGradient id="intentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E91E63"/>
+      <stop offset="100%" style="stop-color:#C2185B"/>
+    </linearGradient>
+    <linearGradient id="loopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00BCD4"/>
+      <stop offset="100%" style="stop-color:#0097A7"/>
+    </linearGradient>
+    <linearGradient id="llmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#673AB7"/>
+      <stop offset="100%" style="stop-color:#512DA8"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#607D8B"/>
+      <stop offset="100%" style="stop-color:#455A64"/>
+    </linearGradient>
+    <linearGradient id="endGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f44336"/>
+      <stop offset="100%" style="stop-color:#d32f2f"/>
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- 箭头标记 -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="900" height="1100" fill="#fafafa"/>
+  
+  <!-- 标题 -->
+  <text x="450" y="40" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="24" font-weight="bold" fill="#333">
+    商家客服工作流 - 整体流程图
+  </text>
+  
+  <!-- 开始节点 -->
+  <g transform="translate(450, 80)">
+    <ellipse rx="50" ry="30" fill="url(#startGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="white" font-weight="bold">开始</text>
+  </g>
+  
+  <!-- 连接线：开始→欢迎输出 -->
+  <line x1="450" y1="110" x2="450" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 欢迎输出节点 -->
+  <g transform="translate(450, 180)">
+    <rect x="-90" y="-25" width="180" height="50" rx="8" fill="url(#outputGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">🎉 欢迎输出</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">"当当，豆包驾到"</text>
+  </g>
+  
+  <!-- 连接线：欢迎→问答 -->
+  <line x1="450" y1="205" x2="450" y2="245" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 问答节点（开场） -->
+  <g transform="translate(450, 275)">
+    <rect x="-100" y="-25" width="200" height="50" rx="8" fill="url(#qaGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">💬 开场问答</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">"有什么问题都可以问"</text>
+  </g>
+  
+  <!-- 连接线：问答→代码 -->
+  <line x1="450" y1="300" x2="450" y2="340" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 代码节点（输入清洗） -->
+  <g transform="translate(450, 370)">
+    <rect x="-90" y="-25" width="180" height="50" rx="8" fill="url(#codeGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">🧹 代码：输入清洗</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">去除特殊字符、控制符</text>
+  </g>
+  
+  <!-- 连接线：代码→意图识别 -->
+  <line x1="450" y1="395" x2="450" y2="435" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 意图识别节点（菱形） -->
+  <g transform="translate(450, 475)">
+    <polygon points="0,-40 120,0 0,40 -120,0" fill="url(#intentGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="13" fill="white" font-weight="bold">🧠 意图识别</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">售前 / 售后 / 兜底</text>
+  </g>
+  
+  <!-- 分支线：售前 -->
+  <path d="M 330 475 L 200 475 L 200 550" stroke="#2196F3" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="260" y="470" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#2196F3" font-weight="bold">售前咨询</text>
+  
+  <!-- 售前问答节点 -->
+  <g transform="translate(200, 580)">
+    <rect x="-85" y="-25" width="170" height="50" rx="8" fill="url(#qaGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">🛒 售前问答</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">商品/优惠咨询</text>
+  </g>
+  
+  <!-- 分支：商品查询→循环 -->
+  <line x1="200" y1="605" x2="200" y2="645" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 循环节点（商品校验） -->
+  <g transform="translate(200, 675)">
+    <rect x="-85" y="-25" width="170" height="50" rx="20" fill="url(#loopGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">🔄 循环：名称校验</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">≤9字合法，否则重输</text>
+  </g>
+  
+  <!-- 循环返回线 -->
+  <path d="M 115 675 Q 80 675 80 625 Q 80 580 115 580" stroke="#00BCD4" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  <text x="65" y="630" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="9" fill="#00BCD4">重输</text>
+  
+  <!-- 分支线：售后 -->
+  <path d="M 450 515 L 450 550 L 450 550" stroke="#FF5722" stroke-width="2" fill="none"/>
+  <line x1="450" y1="515" x2="450" y2="550" stroke="#FF5722" stroke-width="2"/>
+  <line x1="450" y1="550" x2="450" y2="580" stroke="#FF5722" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="460" y="545" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#FF5722" font-weight="bold">售后咨询</text>
+  
+  <!-- 售后问答节点 -->
+  <g transform="translate(450, 610)">
+    <rect x="-85" y="-25" width="170" height="50" rx="8" fill="url(#qaGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">🔄 售后问答</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">退换货/退款</text>
+  </g>
+  
+  <!-- 分支线：兜底 -->
+  <path d="M 570 475 L 700 475 L 700 550" stroke="#9E9E9E" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="630" y="470" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#757575" font-weight="bold">兜底</text>
+  
+  <!-- 大模型陪聊节点 -->
+  <g transform="translate(700, 580)">
+    <rect x="-85" y="-25" width="170" height="50" rx="8" fill="url(#llmGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">🤖 大模型陪聊</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">挂载插件，智能回复</text>
+  </g>
+  
+  <!-- 售前→陪聊 连接线 -->
+  <path d="M 285 675 Q 350 675 350 750 Q 350 825 615 825 L 700 825 L 700 605" stroke="#673AB7" stroke-width="2" fill="none" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  
+  <!-- 售后→陪聊 连接线 -->
+  <line x1="535" y1="610" x2="615" y2="610" stroke="#673AB7" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 售后→文本处理 -->
+  <line x1="450" y1="635" x2="450" y2="675" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 文本处理节点 -->
+  <g transform="translate(450, 705)">
+    <rect x="-90" y="-25" width="180" height="50" rx="8" fill="url(#textGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="-5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="12" fill="white" font-weight="bold">📝 文本处理</text>
+    <text text-anchor="middle" y="12" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="10" fill="white" opacity="0.9">结果拼接</text>
+  </g>
+  
+  <!-- 陪聊→文本处理 -->
+  <path d="M 700 605 Q 700 750 540 750 L 540 705" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- 连接线：文本处理→结束 -->
+  <line x1="450" y1="730" x2="450" y2="770" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 结束节点 -->
+  <g transform="translate(450, 800)">
+    <ellipse rx="50" ry="30" fill="url(#endGrad)" filter="url(#shadow)"/>
+    <text text-anchor="middle" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" fill="white" font-weight="bold">结束</text>
+  </g>
+  
+  <!-- 图例 -->
+  <g transform="translate(50, 880)">
+    <text x="0" y="0" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#333">图例说明</text>
+    
+    <!-- 图例项 -->
+    <g transform="translate(0, 25)">
+      <rect x="0" y="-10" width="20" height="20" rx="4" fill="url(#startGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">开始/结束节点</text>
+    </g>
+    
+    <g transform="translate(150, 25)">
+      <rect x="0" y="-10" width="20" height="20" rx="4" fill="url(#qaGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">问答节点</text>
+    </g>
+    
+    <g transform="translate(260, 25)">
+      <rect x="0" y="-10" width="20" height="20" rx="4" fill="url(#codeGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">代码节点</text>
+    </g>
+    
+    <g transform="translate(370, 25)">
+      <polygon points="10,-10 25,0 10,10 -5,0" fill="url(#intentGrad)"/>
+      <text x="35" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">意图识别</text>
+    </g>
+    
+    <g transform="translate(0, 55)">
+      <rect x="0" y="-10" width="20" height="20" rx="10" fill="url(#loopGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">循环节点</text>
+    </g>
+    
+    <g transform="translate(110, 55)">
+      <rect x="0" y="-10" width="20" height="20" rx="4" fill="url(#llmGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">大模型节点</text>
+    </g>
+    
+    <g transform="translate(230, 55)">
+      <rect x="0" y="-10" width="20" height="20" rx="4" fill="url(#outputGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">输出节点</text>
+    </g>
+    
+    <g transform="translate(350, 55)">
+      <rect x="0" y="-10" width="20" height="20" rx="4" fill="url(#textGrad)"/>
+      <text x="30" y="5" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">文本处理</text>
+    </g>
+  </g>
+  
+  <!-- 流程说明 -->
+  <g transform="translate(50, 980)">
+    <text x="0" y="0" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="14" font-weight="bold" fill="#333">流程说明</text>
+    <text x="0" y="25" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">1. 用户输入 → 2. 欢迎语 → 3. 意图识别分支 → 4. 售前/售后/兜底处理 → 5. 结果输出</text>
+    <text x="0" y="45" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#666">注：虚线表示可选路径或循环返回</text>
+  </g>
+</svg>

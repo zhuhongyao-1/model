@@ -1,0 +1,705 @@
+app:
+  description: 分析客服对话记录
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 客服对话记录分析V2.0
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.41@2111cf63326c7f67e79464301be33f9d36650e18551a65ba65e2cdadfe3f4773
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1763003127170-source-1763005265901-target
+      source: '1763003127170'
+      sourceHandle: source
+      target: '1763005265901'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: iteration-start
+        targetType: code
+      id: 1763005265901start-source-1763005302262-target
+      selected: false
+      source: 1763005265901start
+      sourceHandle: source
+      target: '1763005302262'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: code
+        targetType: llm
+      id: 1763005302262-source-1763005351680-target
+      source: '1763005302262'
+      sourceHandle: source
+      target: '1763005351680'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: code
+        targetType: llm
+      id: 1763005302262-source-1763013319632-target
+      source: '1763005302262'
+      sourceHandle: source
+      target: '1763013319632'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: code
+        targetType: llm
+      id: 1763005302262-source-1763013352437-target
+      source: '1763005302262'
+      sourceHandle: source
+      target: '1763013352437'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: llm
+        targetType: code
+      id: 1763013319632-source-1763014067908-target
+      source: '1763013319632'
+      sourceHandle: source
+      target: '1763014067908'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: llm
+        targetType: code
+      id: 1763005351680-source-1763014067908-target
+      source: '1763005351680'
+      sourceHandle: source
+      target: '1763014067908'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        sourceType: llm
+        targetType: code
+      id: 1763013352437-source-1763014067908-target
+      source: '1763013352437'
+      sourceHandle: source
+      target: '1763014067908'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: iteration
+        targetType: end
+      id: 1763005265901-source-1763002881237-target
+      selected: false
+      source: '1763005265901'
+      sourceHandle: source
+      target: '1763002881237'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: code
+      id: 1763002749502-source-1769773153308-target
+      source: '1763002749502'
+      sourceHandle: source
+      target: '1769773153308'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1769773153308-source-1763003127170-target
+      source: '1769773153308'
+      sourceHandle: source
+      target: '1763003127170'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hint: ''
+          label: input_file
+          max_length: 48
+          options: []
+          placeholder: ''
+          required: true
+          type: file
+          variable: input_file
+      height: 108
+      id: '1763002749502'
+      position:
+        x: 0
+        y: 206
+      positionAbsolute:
+        x: 0
+        y: 206
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        outputs:
+        - value_selector:
+          - '1763005265901'
+          - output
+          value_type: array[object]
+          variable: output
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1763002881237'
+      position:
+        x: 2411
+        y: 205
+      positionAbsolute:
+        x: 2411
+        y: 205
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\n\ndef main(raw_rows):\n    \"\"\"\n    输入: raw_rows (上一个节点输出的\
+          \ Excel 行列表)\n    输出: 增加了 structured_dialogue 字段的新列表\n    \"\"\"\n    new_rows\
+          \ = []\n    \n    # 1. 遍历每一行 Excel 数据\n    for row in raw_rows:\n      \
+          \  # 复制对象，避免修改原数据（好习惯）\n        current_row = row.copy()\n        \n   \
+          \     # 获取原始对话字符串，如果为空则给默认值\n        history_msg = row.get('history_message',\
+          \ '')\n        \n        # --- 核心逻辑：切分与角色分配 ---\n        if history_msg:\n\
+          \            # 按 \\t 切割\n            parts = history_msg.split('\\t')\n\
+          \            \n            dialogue_list = []\n            for index, content\
+          \ in enumerate(parts):\n                content = content.strip()\n    \
+          \            if not content: continue # 跳过空内容\n                \n      \
+          \          # 偶数 (0, 2, 4...) 是用户，奇数 (1, 3, 5...) 是客服\n                role\
+          \ = \"User\" if index % 2 == 0 else \"Agent\"\n                \n      \
+          \          dialogue_list.append({\n                    \"role\": role,\n\
+          \                    \"content\": content\n                })\n        \
+          \    \n            # 将处理好的结构化对话存入新字段\n            current_row['structured_dialogue']\
+          \ = dialogue_list\n            \n            # 为了方便 LLM 阅读，也可以生成一个纯文本版本\n\
+          \            # 格式如：\n            # User: xxx\n            # Agent: xxx\n\
+          \            text_buffer = []\n            for item in dialogue_list:\n\
+          \                text_buffer.append(f\"{item['role']}: {item['content']}\"\
+          )\n            current_row['dialogue_text'] = \"\\n\".join(text_buffer)\n\
+          \            \n        else:\n            current_row['structured_dialogue']\
+          \ = []\n            current_row['dialogue_text'] = \"\"\n\n        new_rows.append(current_row)\n\
+          \n    # 返回处理后的完整列表\n    return {\n        \"processed_rows\": new_rows\n\
+          \    }"
+        code_language: python3
+        outputs:
+          processed_rows:
+            children: null
+            type: array[object]
+        selected: false
+        title: 将rows处理为list
+        type: code
+        variables:
+        - value_selector:
+          - '1769773153308'
+          - rows
+          value_type: array[object]
+          variable: raw_rows
+      height: 51
+      id: '1763003127170'
+      position:
+        x: 676.5547805699036
+        y: 227
+      positionAbsolute:
+        x: 676.5547805699036
+        y: 227
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        error_handle_mode: terminated
+        height: 498
+        is_parallel: false
+        iterator_input_type: array[object]
+        iterator_selector:
+        - '1763003127170'
+        - processed_rows
+        output_selector:
+        - '1763014067908'
+        - result
+        output_type: array[object]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1763005265901start
+        title: 迭代
+        type: iteration
+        width: 1288
+      height: 498
+      id: '1763005265901'
+      position:
+        x: 1185.9277147704247
+        y: -32.01423470588139
+      positionAbsolute:
+        x: 1185.9277147704247
+        y: -32.01423470588139
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 1288
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1763005265901start
+      parentId: '1763005265901'
+      position:
+        x: 60
+        y: 225
+      positionAbsolute:
+        x: 1245.9277147704247
+        y: 192.9857652941186
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        code: "def main(row: dict):\n    \"\"\"\n    输入: row (对应迭代器中的 item)\n    输出:\
+          \ 清洗后的 id 和 msg，供 LLM 使用\n    \"\"\"\n    # 1. 安全获取 ID (防止 Excel 里是数字格式导致报错，强制转字符串)\n\
+          \    msg_id = str(row.get('msg_id', 'Unknown'))\n    \n    # 2. 智能获取内容\n\
+          \    # 优先尝试获取上一节点生成的 \"User: ... Agent: ...\" 格式文本 (dialogue_text)\n   \
+          \ # 如果没有，则回退使用原始的 \"history_message\"\n    msg_content = row.get('dialogue_text')\n\
+          \    if not msg_content:\n        msg_content = row.get('history_message',\
+          \ '')\n\n    return {\n        \"id\": msg_id,\n        \"msg\": msg_content\n\
+          \    }"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        outputs:
+          id:
+            children: null
+            type: string
+          msg:
+            children: null
+            type: string
+        selected: false
+        title: 提取id和msg
+        type: code
+        variables:
+        - value_selector:
+          - '1763005265901'
+          - item
+          value_type: object
+          variable: row
+      height: 51
+      id: '1763005302262'
+      parentId: '1763005265901'
+      position:
+        x: 184
+        y: 224
+      positionAbsolute:
+        x: 1369.9277147704247
+        y: 191.9857652941186
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: moonshotai/Kimi-K2-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e4bd5463-174f-4dc1-aebf-43e0c0220a0d
+          role: system
+          text: "# 角色：对话记录内容分析专家\n你是一名客服对话记录分析专家\n\n## 目标：\n你可以获取对话记录，进行内容分类的打标分析，然后进行输出\n\
+            \n\n## 工作流：\n1.  你可以根据对话记录进行分问题的分类分析 \n- 产品问题：质量缺陷、功能投诉等\n- 服务问题：响应慢投诉、解决效率差等\n\
+            - 体验问题：流程复杂度投诉等\n2. 请根据第一步的判断的问题类型，进一步判断此分类下的具体标签，比如质量缺陷、产品投诉等；如果判断输出的内容标签没有相关，则不输出此分类\n\
+            \n## 输出格式：\n  {\n    \"product\": [\"质量缺陷\", \"功能投诉\", \"使用不便\", \"设计缺陷\"\
+            ]\n  },\n  {\n    \"content\": [\"响应慢投诉\", \"解决效率差\", \"客服态度差\", \"流程繁琐\"\
+            ]\n  },\n  {\n    \"experience \": [\"流程复杂度投诉\", \"界面交互不友好\", \"等待时间长\"\
+            ]\n  }\n\n## 限制：\n- 请严格按格式输出，必须包含product、content、experience三项。"
+        - id: cf428133-53c1-4f7e-8663-993774d98f61
+          role: user
+          text: '{{#1763005302262.msg#}}'
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              content:
+                type: string
+              experience:
+                type: string
+              product:
+                type: string
+            required:
+            - product
+            - content
+            - experience
+            type: object
+        structured_output_enabled: true
+        title: 问题分类
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1763005351680'
+      parentId: '1763005265901'
+      position:
+        x: 525
+        y: 206
+      positionAbsolute:
+        x: 1710.9277147704247
+        y: 173.9857652941186
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: moonshotai/Kimi-K2-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e6c08a78-fb62-4d7f-b8f1-f2f3fe0a8f21
+          role: system
+          text: 你是一名对话总结助手，你可以根据对话信息总结关键信息，总结文案在30个字内
+        - id: 78cda7f6-6146-4b8c-9e82-263779851f3f
+          role: user
+          text: '{{#1763005302262.msg#}}'
+        selected: false
+        title: 内容总结
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1763013319632'
+      parentId: '1763005265901'
+      position:
+        x: 525
+        y: 352
+      positionAbsolute:
+        x: 1710.9277147704247
+        y: 319.9857652941186
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: moonshotai/Kimi-K2-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 9f59d627-318f-44d8-9922-8630931a0542
+          role: system
+          text: "# 角色\n你是一名出色的用户情绪分析大师，擅长从对话历史中精准分析出用户的情绪状态。\n\n## 技能\n### 技能 1: 分析情绪等级\n\
+            1. 仔细研读对话历史。\n2. 将用户的情绪准确划分为5个等级。\n-非常负向\n-负向\n-正常\n-正向\n-非常正向\n3. 清晰阐述划分到此等级的依据。\n\
+            ===回复示例===\n   - rank：[具体等级]\n   - reason：[详细说明从对话历史中判断出该情绪等级的理由]\n===示例结束===\n\
+            \n## 限制:\n- 只专注于分析用户在对话历史中的情绪状态，拒绝回答与情绪分析无关的话题。\n- 所输出的内容必须按照给定的格式进行组织，不能偏离框架要求。"
+        - id: 3e480f16-916b-47e7-9930-a64c60f2dc3d
+          role: user
+          text: '{{#1763005302262.msg#}}'
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              rank:
+                type: string
+              reason:
+                type: string
+            required:
+            - rank
+            - reason
+            type: object
+        structured_output_enabled: true
+        title: 情感分析
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1763013352437'
+      parentId: '1763005265901'
+      position:
+        x: 525
+        y: 60
+      positionAbsolute:
+        x: 1710.9277147704247
+        y: 27.985765294118607
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "\ndef main(problems: dict, summary: str, senti_analysis: dict, msg_id:\
+          \ str, msg: str):\n    return {\n        \"result\": {\n            \"content\"\
+          : problems['content'],\n            \"experience\": problems['experience'],\n\
+          \            \"product\": problems['product'],\n            \"msg_id\":\
+          \ msg_id,\n            \"msg\": msg,\n            \"summary\": summary,\n\
+          \            \"rank\": senti_analysis['rank'],\n            \"reason\":\
+          \ senti_analysis['reason']\n        }\n    }\n"
+        code_language: python3
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1763005265901'
+        outputs:
+          result:
+            children: null
+            type: object
+        selected: false
+        title: 聚合分析结果
+        type: code
+        variables:
+        - value_selector:
+          - '1763005351680'
+          - structured_output
+          value_type: object
+          variable: problems
+        - value_selector:
+          - '1763013319632'
+          - text
+          value_type: string
+          variable: summary
+        - value_selector:
+          - '1763013352437'
+          - structured_output
+          value_type: object
+          variable: senti_analysis
+        - value_selector:
+          - '1763005302262'
+          - id
+          value_type: string
+          variable: msg_id
+        - value_selector:
+          - '1763005302262'
+          - msg
+          value_type: string
+          variable: msg
+      height: 51
+      id: '1763014067908'
+      parentId: '1763005265901'
+      position:
+        x: 866
+        y: 224
+      positionAbsolute:
+        x: 2051.9277147704247
+        y: 191.9857652941186
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+      zIndex: 1002
+    - data:
+        code: "import urllib.request\nimport io\nimport zipfile\nimport xml.etree.ElementTree\
+          \ as ET\nimport ssl\n\ndef main(file_url):\n    # 遇到错误或空输入时的默认返回值\n    empty_result\
+          \ = {\"rows\": []}\n\n    if not file_url:\n        return empty_result\n\
+          \n    try:\n        # --- 1. 下载文件 (忽略 SSL 证书) ---\n        ssl_context =\
+          \ ssl._create_unverified_context()\n        headers = {'User-Agent': 'Mozilla/5.0'}\n\
+          \        req = urllib.request.Request(file_url, headers=headers)\n     \
+          \   \n        with urllib.request.urlopen(req, context=ssl_context) as response:\n\
+          \            file_content = response.read()\n\n        # --- 2. 解析 Excel\
+          \ (原生 XML) ---\n        data_rows = []\n        with zipfile.ZipFile(io.BytesIO(file_content))\
+          \ as z:\n            # A. 获取共享字符串表\n            shared_strings = []\n  \
+          \          try:\n                with z.open('xl/sharedStrings.xml') as\
+          \ f:\n                    root = ET.parse(f).getroot()\n               \
+          \     ns = {'main': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}\n\
+          \                    for si in root.findall('.//main:si', ns):\n       \
+          \                 t_node = si.find('.//main:t', ns)\n                  \
+          \      text = t_node.text if t_node is not None else \"\"\n            \
+          \            shared_strings.append(text)\n            except KeyError:\n\
+          \                pass # 无共享字符串表，跳过\n\n            # B. 解析数据表 Sheet1\n  \
+          \          with z.open('xl/worksheets/sheet1.xml') as f:\n             \
+          \   root = ET.parse(f).getroot()\n                ns = {'main': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}\n\
+          \                \n                rows = root.findall('.//main:row', ns)\n\
+          \                headers = []\n                \n                for i,\
+          \ row in enumerate(rows):\n                    row_values = []\n       \
+          \             cells = row.findall('main:c', ns)\n                    \n\
+          \                    for cell in cells:\n                        cell_type\
+          \ = cell.get('t')\n                        v_node = cell.find('main:v',\
+          \ ns)\n                        value = v_node.text if v_node is not None\
+          \ else \"\"\n                        \n                        # 转换共享字符串引用\n\
+          \                        if cell_type == 's' and value.isdigit():\n    \
+          \                        try:\n                                value = shared_strings[int(value)]\n\
+          \                            except:\n                                pass\n\
+          \                        row_values.append(value)\n                    \n\
+          \                    # 第一行为表头\n                    if i == 0:\n        \
+          \                headers = row_values\n                    else:\n     \
+          \                   # 组装数据行\n                        row_dict = {}\n   \
+          \                     for idx, h in enumerate(headers):\n              \
+          \              val = row_values[idx] if idx < len(row_values) else \"\"\n\
+          \                            row_dict[h] = val\n                       \
+          \ data_rows.append(row_dict)\n\n        # --- 3. 仅返回 rows ---\n        return\
+          \ {\"rows\": data_rows}\n\n    except Exception:\n        # 出错静默失败，返回空列表\n\
+          \        return empty_result"
+        code_language: python3
+        outputs:
+          rows:
+            children: null
+            type: array[object]
+        selected: false
+        title: 从excel中提取rows
+        type: code
+        variables:
+        - value_selector:
+          - '1763002749502'
+          - input_file
+          - url
+          value_type: file
+          variable: file_url
+      height: 51
+      id: '1769773153308'
+      position:
+        x: 356.8227113747415
+        y: 227
+      positionAbsolute:
+        x: 356.8227113747415
+        y: 227
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 282.3061181643541
+      y: 45.98389550668418
+      zoom: 0.726972307202072
+  rag_pipeline_variables: []
